@@ -1,7 +1,5 @@
 import java.util.Scanner;
 import java.util.Random;
-import java.util.ArrayList;
-
 public class MyFirstProgram {
     public static void main(String[] args) {
 
@@ -16,40 +14,87 @@ public class MyFirstProgram {
         System.out.print("Input your name : ");
         String nama = input.nextLine(); 
     
-        System.out.println("\nHello " + nama + "!");
+        System.out.println("Hello " + nama + "!");
 
-        ArrayList<String> funfact = new ArrayList<>();
-            funfact.add ("Taukah kamu, nama Java terinspirasi dari kopi Jawa.");
-            funfact.add ("Java lahir dari proyek bernama The Green project pada tahun 1991 yang bertujuan untuk menciptakan bahasa permrograman yang lebih baik dari C dan C++.");
-            funfact.add ("Bahasa pemrograman ini awalnya bernama Oak, terinspirasi dari pohon Oak.");
-            
+        //Array funfact
+        String[] funfact = {
+            "Funfact 1",
+            "Funfact 2",
+            "Funfact 3",
+            "Funfact 4",
+            "Funfact 5",
+            "Funfact 6",
+            "Funfact 7",
+            "Funfact 8",
+            "Funfact 9",
+            "Funfact 10",
+            "Funfact 11",
+            "Funfact 12",
+            "Funfact 13",
+            "Funfact 14",
+            "Funfact 15",
+            "Funfact 16",
+            "Funfact 17",
+            "Funfact 18",
+            "Funfact 19",
+            "Funfact 20",
+        };
 
-        while(!funfact.isEmpty()){ //Loop slama ada funfact
+        //set wrna text dan background
+        String[] textColors = {
+            "\033[1;31m", //merah, 3x = atur text wrna normal
+            "\033[1;32m",
+            "\033[1;33m",
+            "\033[1;34m",
+            "\033[1;35m"
+        };
+
+        String[] bgColors = {
+            "\033[101m", //merah terang, 10x = atur bg wrna terang
+            "\033[102m", //hijau terang
+            "\033[103m",
+            "\033[104m",
+            "\033[105m"
+        };
+
+        int count = funfact.length; //Jumlah funfact yang belum ditampilkan
+
+        while (count > 0){
             System.out.print("\nMau baca Funfact? (y/n) : ");
             String dyk = input.nextLine().toLowerCase();
-            
-            if (dyk.equals("y")) {
-                int index = random.nextInt(funfact.size()); //ambil index acak
-                System.out.println("Fun Fact : " + funfact.get(index)); 
-                funfact.remove(index);
+
+            if (dyk.equals("y")){
+                int index; //deklarasi
+
+                do {
+                    index = random.nextInt(funfact.length);
+                } while (funfact[index] == null);
+                
+                int colorIndex = random.nextInt(textColors.length);
+                int bgIndex = random.nextInt(bgColors.length);
+
+                System.out.println(bgColors[bgIndex] + textColors[colorIndex] + "Fun Fact: " + funfact[index] + "\033[0m");
+                
+                funfact[index] = null;
+                count--;
             }
+
             else if (dyk.equals("n")) {
-                System.out.println("\nTerimakasih sudah membaca Funfact seputar Java!");
+                System.out.println("\nTerimakasih sudah membaca funfact seputar Java!");
                 System.out.println("Have a nice day!");
                 break;
             }
+
             else {
-                System.out.println("Input tidak terbaca, program diberhentikan.");
-                System.out.println("Have a nice day!");
-                break;
+                System.out.println("Input tidak valid, program diberhentikan.");
+                System.out.println("Hava a nice day!");
             }
         }
 
-        if (funfact.isEmpty()) {
-            System.out.println("\nSemua funfact sudah dibaca. Terimakasih!");
-            System.out.println("Have a nice day!");
+        if (count == 0) {
+            System.out.println("\nSemua funfact sudah dibaca. Terima kasih!\n");
         }
-    
+
         input.close();
     }
 }
