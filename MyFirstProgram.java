@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.Random;
+
 public class MyFirstProgram {
     public static void main(String[] args) {
 
@@ -18,26 +19,45 @@ public class MyFirstProgram {
 
         //Array funfact
         String[] funfact = {
-            "Funfact 1",
-            "Funfact 2",
-            "Funfact 3",
-            "Funfact 4",
-            "Funfact 5",
-            "Funfact 6",
-            "Funfact 7",
-            "Funfact 8",
-            "Funfact 9",
-            "Funfact 10",
-            "Funfact 11",
-            "Funfact 12",
-            "Funfact 13",
-            "Funfact 14",
-            "Funfact 15",
-            "Funfact 16",
-            "Funfact 17",
-            "Funfact 18",
-            "Funfact 19",
-            "Funfact 20",
+            "Java is an object-oriented and general-purpose programming language that is widely used around the world. ",
+
+            "Java's platform neutrality is one of its key advantages. Its 'Write Once, Run Anywhere' (WORA) capability allows Java code to be compiled into bytecode that can run on any Java Virtual Machine (JVM) and host operating system. ",
+
+            "Many Android apps are created using Googles's Java platform. ",
+
+            "Minecraft was initially built in Java by its creator, Notch, because he was familiar with the language. Later, after Microsoft acquired Minecraft, a C++ version was launched. ",
+
+            "Java significantly influences the Internet of Things (IoT) because its portability and scalability make it suitable for creating embedded systems and integrating IoT devices. ",
+
+            "James Gosling, the original designer of Java, initially named it Oak after an oak tree visible from his office window. The name was changed to Java in 1994 due to a trademark issue with Oak Technology. ",
+
+            "The Java mascot is named Duke, and it was created by Joe Palrang, who also worked on the movie 'Shrek. ",
+
+            "The JUnit Testing Framework is a popular Java technology, with approximately 70% of Java developers using it. ",
+
+            "The term 'final' in Java has four distinct meanings: final class (cannot be extended), final method (cannot be overridden), final field (a constant), and final variable (its value cannot be changed once assigned). ",
+
+            "Java gets downloaded one billion times a year. ",
+
+            "Java was created somewhat by accident when James Gosling and his team were cleaning up C++, they ended up with a new language. ",
+
+            "In 2010, Oracle launched lawsuits regarding the use of Java in Android operating systems, seeking $8.8 billio. The cas was settled in 2016 in favor of Google. ",
+
+            "There are approximately 9 million Java developers worldwide. ",
+
+            "Java is the second most popular programming language. ",
+
+            "Java is platform independent, meaning the code is compatible with Mac, Linux, and Windows platforms. ",
+
+            "An average salary of a Java programmer is about $84,000 per year. ",
+
+            "Java lost its leading position as the most poppular programming language in 2021, according to Tiobe. ",
+
+            "Java is most known for its contribution to web development. ",
+
+            "Java doesn't have any abbreviations; it's named after a rich, aromatic coffe seed. ",
+
+            "Java is case-sensitive, meaning the value of indetifiers like classes, methods, and variables changes depending on whether they are upper or lower case. ",
         };
 
         //set wrna text dan background
@@ -60,7 +80,7 @@ public class MyFirstProgram {
         int count = funfact.length; //Jumlah funfact yang belum ditampilkan
 
         while (count > 0){
-            System.out.print("\nMau baca Funfact? (y/n) : ");
+            System.out.print("\nDo you want to read Funfact? (y/n) : ");
             String dyk = input.nextLine().toLowerCase();
 
             if (dyk.equals("y")){
