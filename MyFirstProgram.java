@@ -55,7 +55,7 @@ public class MyFirstProgram {
 
             "Java is most known for its contribution to web development. ",
 
-            "Java doesn't have any abbreviations; it's named after a rich, aromatic coffe seed. ",
+            "Java doesn't have any abbreviations; it's named after a rich, aromatic coffee seed. ",
 
             "Java is case-sensitive, meaning the value of indetifiers like classes, methods, and variables changes depending on whether they are upper or lower case. ",
         };
@@ -108,6 +108,7 @@ public class MyFirstProgram {
             else {
                 System.out.println("Input tidak valid, program diberhentikan.");
                 System.out.println("Hava a nice day!");
+                break;
             }
         }
 
