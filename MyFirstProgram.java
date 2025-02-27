@@ -5,19 +5,19 @@ public class MyFirstProgram {
     public static void main(String[] args) {
 
         //Deklarasi semua import ; scanner dan random
-        Scanner input = new Scanner(System.in);
-        Random  random = new Random();
+        Scanner input = new Scanner(System.in); //set variable? command? untuk input user nanti
+        Random  random = new Random(); // set command untuk random warna dan fun fact nanti
         
-        System.out.println("\n╔══════════════════════╗");
-        System.out.println("║" +  "\033[1;35m" + " WELCOME TO FUNFACTS! " + "\033[0m" + "║" );
-        System.out.println("╚══════════════════════╝");
+        System.out.println("\033[33m" + "\n╔══════════════════════╗" + "\033[0m" );
+        System.out.println("\033[33m" + "║" + "\033[0m" +  "\033[1;97m" + " WELCOME TO FUNFACTS! " + "\033[0m" + "\033[33m" + "║" + "\033[0m");
+        System.out.println("\033[33m" + "╚══════════════════════╝" + "\033[0m");
 
         //Scanner input = new Scanner(System.in);
         
         System.out.print("\nPlease input your name : "); 
         String nama = input.nextLine(); 
     
-        System.out.println("Hello " + nama + "! Get ready read some funfacts about java programming!");
+        System.out.println("Hello, " + nama + "! Get ready read some funfacts about java programming!");
 
         //Array funfact
         String[] funfact = {
@@ -62,43 +62,35 @@ public class MyFirstProgram {
             "Java is case-sensitive, meaning the value of identifiers like classes, methods, and variables changes depending on whether they are upper or lower case. ",
         };
 
-        //set wrna text dan background
-        String[] textColors = {
-            "\033[1;30m", //hitam, 3x = atur text wrna normal
-            "\033[1;31m", //merah
-            "\033[1;32m", //hijau
-            "\033[1;34m", //biru
-            "\033[1;35m" //ungu
-        };
-
-        String[] bgColors = {
-            "\033[101m", //merah terang, 10x = atur bg wrna terang
-            "\033[102m", //hijau terang
-            "\033[103m", //Kuning
-            "\033[106m", //cyan
-            "\033[107m" //putih
+        //set kombinasi wrna text dan background
+        String[][] colorCombinations = {
+            {"\033[1;30m", "\033[102m"}, //hitam, hijau muda
+            {"\033[1;33m", "\033[104m"}, // kuning, biru
+            {"\033[1;35m", "\033[107m"} //ungu, putih
         };
 
         int count = funfact.length; //Jumlah funfact yang belum ditampilkan
+        int colorIndex = 0; //mulai dari index pertama
 
         while (count > 0){
             System.out.print("\nDo you want to read Funfact? (y/n) : ");
-            String dyk = input.nextLine().toLowerCase(); //dyk = did you know, variabel untuk inputan
+            String dyk = input.nextLine().toLowerCase(); //dyk = did you know, variabel untuk inputan user mau lnjut atau tidak
 
             if (dyk.equals("y")){
                 int index; //deklarasi index
 
                 do {
                     index = random.nextInt(funfact.length);
-                } while (funfact[index] == null);
+                } while (funfact[index] == null); //klo funfact yang kluar null, maka random ulang lagi
                 
-                int colorIndex = random.nextInt(textColors.length);
-                int bgIndex = random.nextInt(bgColors.length);
+                String textColor = colorCombinations[colorIndex][0];
+                String bgColor = colorCombinations[colorIndex][1];
 
-                System.out.println("\033[1m" + bgColors[bgIndex] + textColors[colorIndex] + "Did you know? " + funfact[index] + "\033[0m");
+                System.out.println("\033[1m" + bgColor + textColor + "Did you know? " + funfact[index] + "\033[0m");
                 
-                funfact[index] = null;
+                funfact[index] = null; //funfact yg sudah keluar, berubah menjadi null
                 count--;
+                colorIndex = ++colorIndex % colorCombinations.length; //pindah ke color combinasi selanjutnya, hingga n colorCombination
             }
 
             else if (dyk.equals("n")) {
@@ -118,7 +110,7 @@ public class MyFirstProgram {
 
         String javaversion = System.getProperty("java.version");
 
-        System.out.println("Java Version : " + javaversion + "\n" );
+        System.out.print("Java Version : " + javaversion + "\n" );
 
         input.close();
     }
