@@ -8,14 +8,16 @@ public class MyFirstProgram {
         Scanner input = new Scanner(System.in);
         Random  random = new Random();
         
-        System.out.println("Welcome!");
+        System.out.println("╔═════════════════════════╗");
+        System.out.println("║" +  "\033[1;35m" + "  WELLCOME TO FUNFACTS!  " + "\033[0m" + "║" );
+        System.out.println("╚═════════════════════════╝");
 
         //Scanner input = new Scanner(System.in);
         
-        System.out.print("Input your name : ");
+        System.out.print("\nPlease input your name : "); 
         String nama = input.nextLine(); 
     
-        System.out.println("Hello " + nama + "!");
+        System.out.println("Hello " + nama + "! Get ready read some funfacts about java programming!");
 
         //Array funfact
         String[] funfact = {
@@ -62,19 +64,19 @@ public class MyFirstProgram {
 
         //set wrna text dan background
         String[] textColors = {
-            "\033[1;31m", //merah, 3x = atur text wrna normal
-            "\033[1;32m",
-            "\033[1;33m",
-            "\033[1;34m",
-            "\033[1;35m"
+            "\033[1;30m", //hitam, 3x = atur text wrna normal
+            "\033[1;31m", //merah
+            "\033[1;32m", //hijau
+            "\033[1;34m", //biru
+            "\033[1;35m" //ungu
         };
 
         String[] bgColors = {
             "\033[101m", //merah terang, 10x = atur bg wrna terang
             "\033[102m", //hijau terang
-            "\033[103m",
-            "\033[104m",
-            "\033[105m"
+            "\033[103m", //Kuning
+            "\033[106m", //cyan
+            "\033[107m" //putih
         };
 
         int count = funfact.length; //Jumlah funfact yang belum ditampilkan
@@ -84,7 +86,7 @@ public class MyFirstProgram {
             String dyk = input.nextLine().toLowerCase();
 
             if (dyk.equals("y")){
-                int index; //deklarasi
+                int index; //deklarasi index
 
                 do {
                     index = random.nextInt(funfact.length);
@@ -93,27 +95,27 @@ public class MyFirstProgram {
                 int colorIndex = random.nextInt(textColors.length);
                 int bgIndex = random.nextInt(bgColors.length);
 
-                System.out.println(bgColors[bgIndex] + textColors[colorIndex] + "Fun Fact: " + funfact[index] + "\033[0m");
+                System.out.println(bgColors[bgIndex] + textColors[colorIndex] + "Did you know? " + funfact[index] + "\033[0m");
                 
                 funfact[index] = null;
                 count--;
             }
 
             else if (dyk.equals("n")) {
-                System.out.println("\nTerimakasih sudah membaca funfact seputar Java!");
+                System.out.println("\nThankyou for reading fun facts about Java!");
                 System.out.println("Have a nice day!");
                 break;
             }
 
             else {
-                System.out.println("Input tidak valid, program diberhentikan.");
+                System.out.println("Invalid input. The program has been terminated.");
                 System.out.println("Have a nice day!");
                 break;
             }
         }
 
         if (count == 0) {
-            System.out.println("\nSemua funfact sudah dibaca. Terima kasih!\n");
+            System.out.println("\nAll fun facts have been read. Thank you!\n");
         }
 
         input.close();
