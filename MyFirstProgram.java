@@ -83,7 +83,7 @@ public class MyFirstProgram {
 
         while (count > 0){
             System.out.print("\nDo you want to read Funfact? (y/n) : ");
-            String dyk = input.nextLine().toLowerCase();
+            String dyk = input.nextLine().toLowerCase(); //dyk = did you know, variabel untuk inputan
 
             if (dyk.equals("y")){
                 int index; //deklarasi index
