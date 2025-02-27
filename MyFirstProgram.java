@@ -8,9 +8,9 @@ public class MyFirstProgram {
         Scanner input = new Scanner(System.in);
         Random  random = new Random();
         
-        System.out.println("╔═════════════════════════╗");
-        System.out.println("║" +  "\033[1;35m" + "  WELLCOME TO FUNFACTS!  " + "\033[0m" + "║" );
-        System.out.println("╚═════════════════════════╝");
+        System.out.println("\n╔══════════════════════╗");
+        System.out.println("║" +  "\033[1;35m" + " WELCOME TO FUNFACTS! " + "\033[0m" + "║" );
+        System.out.println("╚══════════════════════╝");
 
         //Scanner input = new Scanner(System.in);
         
@@ -108,9 +108,7 @@ public class MyFirstProgram {
             }
 
             else {
-                System.out.println("Invalid input. The program has been terminated.");
-                System.out.println("Have a nice day!");
-                break;
+                System.out.println("Invalid input. Please enter 'y' or 'n'.");
             }
         }
 
