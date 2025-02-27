@@ -95,7 +95,7 @@ public class MyFirstProgram {
                 int colorIndex = random.nextInt(textColors.length);
                 int bgIndex = random.nextInt(bgColors.length);
 
-                System.out.println(bgColors[bgIndex] + textColors[colorIndex] + "Did you know? " + funfact[index] + "\033[0m");
+                System.out.println("\033[1m" + bgColors[bgIndex] + textColors[colorIndex] + "Did you know? " + funfact[index] + "\033[0m");
                 
                 funfact[index] = null;
                 count--;
@@ -117,6 +117,10 @@ public class MyFirstProgram {
         if (count == 0) {
             System.out.println("\nAll fun facts have been read. Thank you!\n");
         }
+
+        String javaversion = System.getProperty("java.version");
+
+        System.out.println("Java Version : " + javaversion + "\n" );
 
         input.close();
     }
