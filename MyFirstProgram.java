@@ -8,16 +8,18 @@ public class MyFirstProgram {
         Scanner input = new Scanner(System.in); //set variable? command? untuk input user nanti
         Random  random = new Random(); // set command untuk random warna dan fun fact nanti
         
-        System.out.println("\033[33m" + "\n╔══════════════════════╗" + "\033[0m" );
-        System.out.println("\033[33m" + "║" + "\033[0m" +  "\033[1;97m" + " WELCOME TO FUNFACTS! " + "\033[0m" + "\033[33m" + "║" + "\033[0m");
-        System.out.println("\033[33m" + "╚══════════════════════╝" + "\033[0m");
+        System.out.println("\033[97m" + "\n╔══════════════════════╗" + "\033[0m" );
+        System.out.println("\033[973m" + "║" + "\033[0m" +  "\033[1;95m" + " WELCOME TO FUNFACTS! " + "\033[0m" + "\033[97m" + "║" + "\033[0m");
+        System.out.println("\033[97m" + "╚══════════════════════╝" + "\033[0m");
 
         //Scanner input = new Scanner(System.in);
         
-        System.out.print("\nPlease input your name : "); 
+        System.out.print("\033[1;95m" + "\033[107m"+ "\nPlease input your name : " + "\033[0m"); 
+        System.out.print("\033[1;95m" + "\033[107m");
         String nama = input.nextLine(); 
+        System.out.print("\033[0m");
     
-        System.out.println("Hello, " + nama + "! Get ready read some funfacts about java programming!");
+        System.out.println(nama + " did you know Java has some secrets waiting to be uncovered? Stick around, and you will discover fascinating facts you never expected!");
 
         //Array funfact
         String[] funfact = {
@@ -69,10 +71,10 @@ public class MyFirstProgram {
             {"\033[1;35m", "\033[107m"} //ungu, putih
         };
 
-        int count = funfact.length; //Jumlah funfact yang belum ditampilkan
+        int sisaFunfact = funfact.length; //Jumlah funfact yang belum ditampilkan
         int colorIndex = 0; //mulai dari index pertama
 
-        while (count > 0){
+        while (sisaFunfact > 0){
             System.out.print("\nDo you want to read Funfact? (y/n) : ");
             String dyk = input.nextLine().toLowerCase(); //dyk = did you know, variabel untuk inputan user mau lnjut atau tidak
 
@@ -89,7 +91,7 @@ public class MyFirstProgram {
                 System.out.println("\033[1m" + bgColor + textColor + "Did you know? " + funfact[index] + "\033[0m");
                 
                 funfact[index] = null; //funfact yg sudah keluar, berubah menjadi null
-                count--;
+                sisaFunfact--;
                 colorIndex = ++colorIndex % colorCombinations.length; //pindah ke color combinasi selanjutnya, hingga n colorCombination
             }
 
@@ -104,7 +106,7 @@ public class MyFirstProgram {
             }
         }
 
-        if (count == 0) {
+        if (sisaFunfact == 0) {
             System.out.println("\nAll fun facts have been read. Thank you!\n");
         }
 
